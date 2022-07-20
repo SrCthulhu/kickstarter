@@ -48,35 +48,17 @@
                     </div>
                 </div>
                 <div class="col-8">
+                    {% for t in proyectos['tiers'] %}
+                    <!--t porque no estamos accediendo a proyectos, sino al campo "tiers" de la base de datos-->
                     <div class="row pb-5">
                         <div class="col">
-                            <h6>Contribuye 5 $</h6>
-                            <a href="/checkout/{{proyectos['_id']}}/5" type="button"
+                            <h6>{{t['name']}} ${{t['amount']}}</h6>
+                            <p>{{t['reward']}}</p>
+                            <a href="/checkout/{{proyectos['_id']}}/{{t['amount']}}" type="button"
                                 class="btn btn-success btn-lg">Continuar</a>
                         </div>
                     </div>
-                    <div class="row pb-5">
-                        <div class="col">
-                            <h6>Contribuye 10 $</h6>
-                            <ul>
-                                <li>Patrocinio</li>
-                            </ul>
-                            <a href="/checkout/{{proyectos['_id']}}/10" type="button"
-                                class="btn btn-success btn-lg">Continuar</a>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <h6>Contribuye 30 $</h6>
-                            <ul>
-                                <li>Regalos</li>
-                                <li>Patrocinio</li>
-                                <li>Reconocimiento</li>
-                            </ul>
-                            <a href="/checkout/{{proyectos['_id']}}/30" type="button"
-                                class="btn btn-success btn-lg">Continuar</a>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
                 <div class="col-4 cuadrados">
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime nisi velit amet ullam.
