@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="icon" href="https://iconape.com/wp-content/files/ev/371011/svg/371011.svg">
+    <style type="text/css">
+        .cuadrados {
+            outline: 1px solid #d0d0d0;
+        }
+    </style>
+    <title>Contribuir | Kickstarter</title>
+</head>
+
+<body>
+    <section>
+        <div class="fluid-container">
+            <div class="row">
+                <div class="col text-center">
+                    <a class="text-decoration-none" href="/">
+                        <img src="https://conpochoclos.com/wp-content/uploads/2021/09/Kickstarter-Logo.png" width="180"
+                            height="100" alt="">
+                    </a>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h4>{{proyectos['name']}}</h4>
+                    <h6>{{proyectos['autor']}}</h6>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12 pb-5">
+                    <h5>RECOMPENSAS > COMPLEMENTOS > PAGO</h5>
+                    <div class="py-5">
+                        <h1>Selecciona tu recompensa</h1>
+                        <small>selecciona una opción a continuación</small>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="row pb-5">
+                        <div class="col">
+                            <h6>Contribuye 5 $</h6>
+                            <a href="/checkout/{{proyectos['_id']}}/5" type="button"
+                                class="btn btn-success btn-lg">Continuar</a>
+                        </div>
+                    </div>
+                    <div class="row pb-5">
+                        <div class="col">
+                            <h6>Contribuye 10 $</h6>
+                            <ul>
+                                <li>Patrocinio</li>
+                            </ul>
+                            <a href="/checkout/{{proyectos['_id']}}/10" type="button"
+                                class="btn btn-success btn-lg">Continuar</a>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <h6>Contribuye 30 $</h6>
+                            <ul>
+                                <li>Regalos</li>
+                                <li>Patrocinio</li>
+                                <li>Reconocimiento</li>
+                            </ul>
+                            <a href="/checkout/{{proyectos['_id']}}/30" type="button"
+                                class="btn btn-success btn-lg">Continuar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 cuadrados">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime nisi velit amet ullam.
+                        Exercitationem ducimus earum obcaecati iste sit unde fuga minus at. Consequuntur magni inventore
+                        eligendi a asperiores culpa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

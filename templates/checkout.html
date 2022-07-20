@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="icon" href="https://iconape.com/wp-content/files/ev/371011/svg/371011.svg">
+    <style type="text/css">
+        .cuadrados {
+            outline: 1px solid #d0d0d0;
+        }
+    </style>
+    <title>Checkout | Kickstarter</title>
+</head>
+
+<body>
+    <section>
+        <div class="fluid-container">
+            <div class="row">
+                <div class="col text-center">
+                    <a class="text-decoration-none" href="/">
+                        <img src="https://conpochoclos.com/wp-content/uploads/2021/09/Kickstarter-Logo.png" width="180"
+                            height="100" alt="">
+                    </a>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <h1>Resumen de la contribución</h1>
+                    <p>No te cobraremos en este momento. Si el proyecto alcanza la meta de financiamiento, se hará el
+                        cargo a tu método de pago cuando finalice la campaña. Te enviaremos un correo electrónico de
+                        confirmación a danielparucho@gmail.com cuando tu contribución se haya procesado con éxito.</p>
+                    <div class="row">
+                        <div class="col-6">
+                            <img class="img-fluid" src="{{proyectos['img']}}" alt="">
+                        </div>
+                        <div class="col-6">
+                            <h6>{{proyectos['name']}}</h6>
+                            <small style="color: green;">{{proyectos['financed']}} Financiado</small>
+                            <h6>{{proyectos['autor']}}</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Tu contirbución</h4>
+                        </div>
+                        <div class="col-2">
+                            <p>Recompensa</p>
+                            <p>Envío</p>
+                        </div>
+                        <div class="col-2">
+                            <p>Rentailers only</p>
+                            <p>Argentina</p>
+                        </div>
+                        <div class="col-8 text-end">
+                            <p>{{aporte}} $</p>
+                            <p>0 $</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-6">
+                            <small><strong>Monto total</strong></small>
+                        </div>
+
+                        <div class="col-6 text-end">
+                            <small>aproximadamente(11 $)</small>
+                            <small style="color: green;">10 $</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="py-3">
+                        <p>Número de tarjeta</p>
+                        <input type="number" placeholder="xxxx xxxx xxxx xxxx">
+                    </div>
+                    <div>
+                        <p>Nombre</p>
+                        <input type="name" placeholder="Giovanni Giorgio">
+                    </div>
+                    <div class="py-3">
+                        <p>Fecha de vencimiento</p>
+                        <input type="" placeholder="(MM/AA)">
+                    </div>
+                    <div>
+                        <p>Código de seguridad</p>
+                        <input type="code" placeholder="(CVV)">
+                    </div>
+                    <div class="py-3">
+                        <p>Código Postal</p>
+                        <input type="postal" placeholder="xxxx">
+                    </div>
+                    <div class="pb-3">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            <h6>Recordar esta tarjeta para contribuciones futuras</h6>
+                        </label>
+                    </div>
+                    <h6><strong>Las recompensas no están garantizadas.</strong></h6>
+                    <div>
+                        <h6><strong>Patrocinar un proyecto significa apoyar una idea creativa, independientemente del
+                                resultado.</strong></h6>
+                    </div>
+
+                    <div class="pb-3">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            <h6><strong>Comprendo que las recompensas o los reembolsos no están garantizados por
+                                    Kickstarter o
+                                    el creador.</strong></h6>
+                        </label>
+                    </div>
+                    <small>Más información sobre las responsabilidades.</small>
+                    <div class="py-3 d-grid gap-2">
+                        <button type="button" class="btn btn-success btn-lg">Contribuir</button>
+                    </div>
+
+                    <small style="color: grey;">Si haces tu contribución, aceptas los Términos de uso y la Política de
+                        privacidad de
+                        Kickstarter y autorizas que Stripe, nuestro procesador de pagos, te cobre a tu método de
+                        pago.</small>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

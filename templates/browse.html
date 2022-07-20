@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="icon" href="https://iconape.com/wp-content/files/ev/371011/svg/371011.svg">
+    <style type="text/css">
+        .cuadrados {
+            outline: 1px solid #d0d0d0;
+        }
+    </style>
+    <title>Descubrir >>> Proyectos</title>
+</head>
+
+<body>
+    <section>
+        <div class="fluid-container">
+            <div class="row">
+                <div class="col-4">
+                    <a class="text-decoration-none" href="#">Descubrir</a>
+                    <a class="text-decoration-none" href="#">Empieza un proyecto</a>
+                </div>
+                <div class="col-4 text-center">
+                    <a class="text-decoration-none" href="/">
+                        <img src="https://conpochoclos.com/wp-content/uploads/2021/09/Kickstarter-Logo.png" width="180"
+                            height="100" alt="">
+                    </a>
+                </div>
+                <div class="col-4 text-end">
+                    <a class="text-decoration-none" href="#">Búsqueda 🔍</a>
+                    <a class="text-decoration-none" href="/login">
+                        <img width="50" height="50" src="https://apprecs.org/ios/images/app-icons/256/c6/1042479814.jpg"
+                            alt="">
+                    </a>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h3>Búsqueda de proyectos: <button type="button" class="btn btn-outline-dark">Activo</button>
+                        proyectos de: <button type="button" class="btn btn-outline-dark">Todas las categorías</button>
+                        <button type="button" class="btn btn-outline-dark">Recomendados para mi</button>
+                        Ordenado: <button type="button" class="btn btn-outline-dark">Al azar</button>
+                    </h3>
+                </div>
+            </div>
+    </section>
+    </div>
+    <div class="fluid-container">
+        <hr>
+    </div>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3>Proyectos para ti</h3>
+                    <small style="color: grey;">Ver los 7 millones de proyectos activos</small>
+                </div>
+                {% for p in proyectos %}
+                <div class="col-4 cuadrados py-3">
+                    <a class="text-decoration-none" href="/detalle/{{p['_id']}}">
+                        <img class="img-fluid" src="{{p['img']}}" alt="">
+                    </a>
+                    <h6 class="pt-3">{{p['name']}}</h6>
+                    <p>{{p['descrip']}}</p>
+                    <small>{{p['autor']}}</small>
+                    <hr>
+                    <p>{{p['contributed']}} contribuido</p>
+                    <p>{{p['financed']}} financiado</p>
+                    <p>{{p['time']}}</p>
+                    <div class="row">
+                        <div class="col-6">
+                            <small>{{p['category']}}</small>
+                        </div>
+                        <div class="col-6">
+                            <small>{{p['country']}}</small>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="fluid-container">
+            <hr>
+        </div>
+        <div class="container pt-2">
+            <div class="row">
+                <div class="col-1 text-center">
+                    <a class="text-decoration-none" href="#">
+                        <h6>Arte</h6>
+                    </a>
+                </div>
+                <div class="col-2 text-center">
+                    <a class="text-decoration-none" href="#">
+                        <h6>Cómics & ilustración</h6>
+                    </a>
+                </div>
+                <div class="col-2 text-center">
+                    <a class="text-decoration-none" href="#">
+                        <h6>Diseño & tecnología</h6>
+                    </a>
+                </div>
+                <div class="col-1 text-center">
+                    <a class="text-decoration-none" href="#">
+                        <h6>Cine</h6>
+                    </a>
+                </div>
+                <div class="col-2 text-center">
+                    <a class="text-decoration-none" href="#">
+                        <h6>Comida & creaciones</h6>
+                    </a>
+                </div>
+                <div class="col-1 text-center">
+                    <a class="text-decoration-none" href="#">
+                        <h6>Juegos</h6>
+                    </a>
+                </div>
+                <div class="col-1 text-center">
+                    <a class="text-decoration-none" href="#">
+                        <h6>Música</h6>
+                    </a>
+                </div>
+                <div class="col-1 text-center">
+                    <a class="text-decoration-none" href="#">
+                        <h6>Publicaciones</h6>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="col-12">
+                        <small><strong>ACERCA DE NOSOTROS</strong></small>
+                    </div>
+                    <p>Acerca de nosotros</p>
+                    <p>Nuestra acta</p>
+                    <p>Estadísticas</p>
+                    <p>Prensa</p>
+                    <p>Empleos</p>
+                </div>
+                <div class="col-4">
+                    <div class="col-12">
+                        <small><strong>ATENCIÓN AL CLIENTE</strong></small>
+                    </div>
+                    <p>Centro de ayuda</p>
+                    <p>Nuestras reglas</p>
+                    <p>Recursos para creadores</p>
+                    <p>Forward Funds</p>
+                    <p>Recursos de marca</p>
+                </div>
+                <div class="col-4">
+                    <div class="col-12">
+                        <small><strong>MÁS DE KICKSTARTER</strong></small>
+                    </div>
+                    <p>Boletines</p>
+                    <p>Kickstarter Magazine</p>
+                    <p>The Creative Independent</p>
+                    <p>El blog de Kickstarter</p>
+                    <p>Aplicaciones móviles</p>
+                    <p>Investigación</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <img width="50" height="50" src="https://apprecs.org/ios/images/app-icons/256/c6/1042479814.jpg"
+                        alt="">
+                    <small>Kickstarter, by Cthulhu © 2022</small>
+                </div>
+                <div class="col-6 text-end">
+                    <button type="button" class="btn btn-outline-dark">Español</button>
+                    <button type="button" class="btn btn-outline-dark">$ US Dollar (USD)</button>
+                </div>
+            </div>
+        </div>
+        <div class="fluid-containner">
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-2 text-center">
+                    <a class="text-decoration-none" href="#">
+                        <h6>Confianza y seguridad</h6>
+                    </a>
+                </div>
+                <div class="col-2 text-center">
+                    <a class="text-decoration-none" href="#">
+                        <h6>Términos de uso</h6>
+                    </a>
+                </div>
+                <div class="col-2 text-center">
+                    <a class="text-decoration-none" href="#">
+                        <h6>Política de privacidad</h6>
+                    </a>
+                </div>
+                <div class="col-2 text-center">
+                    <a class="text-decoration-none" href="#">
+                        <h6>Política de cookies</h6>
+                    </a>
+                </div>
+                <div class="col-2 text-center">
+                    <a class="text-decoration-none" href="#">
+                        <h6>Declaración de accesibilidad</h6>
+                    </a>
+                </div>
+                <div class="col-2 text-center">
+                    <a class="text-decoration-none" href="#">
+                        <h6>Aviso de consentimiento para California</h6>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
