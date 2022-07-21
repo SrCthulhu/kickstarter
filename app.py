@@ -73,7 +73,7 @@ def add_channel_to_guardados(id):
     # se guarda en la base de datos el id del usuario.
     guardado['user_id'] = user
 
-    db.guardados.insert(guardado)
+    db.guardados.insert_one(guardado)
 
     return redirect('/guardado')
 
