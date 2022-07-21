@@ -1,13 +1,15 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, session
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 import os
+import random
+
 
 #############################
-#APP FLASK CONFIGURATION
+# APP FLASK CONFIGURATION
 app = Flask(__name__)
-
-#DATABASE CONFIGURATION
+app.secret_key = ".."
+# DATABASE CONFIGURATION
 uri = os.environ.get('MONGO_DB_URI', "mongodb://127.0.0.1")
 client = MongoClient(uri)
 db = client.kickstarter
@@ -21,7 +23,11 @@ def home_view():
 
 @app.route("/login")
 def login_view():
-    return render_template("login.html")
+
+    if not session.get('id'):
+        session['id'] = random.randint(12345, 99999)
+
+    return render_template("login.html", id=session.get('id'))
 
 
 @app.route("/signup")
@@ -47,14 +53,38 @@ def proyecto_view(id):
 @app.route("/add/<id>")
 def add_channel_to_guardados(id):
     proyecto = db.proyectos.find_one({'_id': ObjectId(id)})
-    db.guardados.insert_one(proyecto)
+
+    if not session.get('id'):
+        return redirect('/')
+
+    user = session.get('id')  # VARIABLE GLOBAL: id
+
+    guardado = {}
+    guardado['name'] = proyecto['name']
+    guardado['img'] = proyecto['img']
+    guardado['descrip'] = proyecto['descrip']
+    guardado['autor'] = proyecto['autor']
+    guardado['contributed'] = proyecto['contributed']
+    guardado['financed'] = proyecto['financed']
+    guardado['time'] = proyecto['time']
+    guardado['category'] = proyecto['category']
+    guardado['country'] = proyecto['country']
+
+    # se guarda en la base de datos el id del usuario.
+    guardado['user_id'] = user
+
+    db.guardados.insert(guardado)
 
     return redirect('/guardado')
 
 
 @app.route("/guardado")
 def guardar_view():
-    proyectos = list(db.guardados.find())
+    if not session.get('id'):
+        return redirect('/')
+
+    user = session.get('id')  # VARIABLE GLOBAL: id
+    proyectos = list(db.guardados.find({'user_id': user}))
     return render_template("guardados.html", proyectos=proyectos)
 
 
